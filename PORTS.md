@@ -38,6 +38,8 @@ claude plugin validate plugins/mattpocock-skills-claude --strict
 
 The build command regenerates both packages. It verifies that the Claude selection equals the promoted buckets, rejects duplicate names, preserves invocation policy, and in check mode compares every generated file and executable bit. Edit canonical `skills/`, manifests or `scripts/plugin-templates/`, then regenerate; do not edit `plugins/` directly. The release version command regenerates packages after syncing the canonical Claude version. A CI check gates drift.
 
+The inherited automated Release job is restricted to `mattpocock/skills`. This fork validates packages on push without creating upstream-style version PRs or releases.
+
 No hooks, MCP servers, credentials, global configuration, or schedulers are bundled. Collaboration runs only when available and permitted; otherwise do steps serially and disclose reduced independence. External writes remain under the user's authorization and host approvals.
 
 Verified on 2026-10-02 with Claude Code 2.1.285 and Codex CLI 0.159.3: strict Claude marketplace and clean-package checks, temporary-profile native installs, installed resource integrity, and Codex app-server discovery of exactly 27 qualified skills without parsing errors. Native installation and discovery were tested; individual operational workflows were not exercised against a live project. Original upstream release notes and documentation retain historical examples and attribution.
