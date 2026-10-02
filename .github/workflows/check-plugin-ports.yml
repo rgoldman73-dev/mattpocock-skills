@@ -1,0 +1,16 @@
+name: Check plugin ports
+on:
+  push:
+  pull_request:
+permissions:
+  contents: read
+jobs:
+  generated-packages:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: npm run check-plugin-version
+      - run: npm run check-codex-plugin

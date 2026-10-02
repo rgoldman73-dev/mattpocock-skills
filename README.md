@@ -22,54 +22,25 @@ If you want to keep up with changes to these skills, and any new ones I create, 
 
 [Sign Up To The Newsletter](https://www.aihero.dev/s/skills-newsletter)
 
-## Installation (30-second setup)
+## Install this fork
 
-Two ways in, two philosophies. **The [Claude Code plugin](https://code.claude.com/docs/en/plugins)** installs the whole set as a managed, read-only bundle that updates when I ship, so you subscribe rather than fork. **[skills.sh](https://skills.sh/mattpocock/skills)** copies editable skill files into your project, so you can hack on them and make them your own. Pick one: installing both leaves you with every skill twice.
+This is Robert Goldman's unofficial fork of [Matt Pocock's skills](https://github.com/mattpocock/skills). It keeps the existing Claude plugin and adds a native Codex plugin containing the same 27 promoted skills. See [PORTS.md](./PORTS.md) for compatibility and maintenance details.
 
-### 1. Get the skills
-
-<details>
-<summary><strong>Claude Code</strong></summary>
+### Claude Code
 
 ```bash
-claude plugins install mattpocock-skills
+claude plugin marketplace add rgoldman73-dev/mattpocock-skills
+claude plugin install mattpocock-skills@rgoldman-mattpocock
 ```
 
-Or, from inside a session:
-
-```
-/plugin install mattpocock-skills
-```
-
-It's in Claude Code's official marketplace, so there's nothing to add first, and updates arrive automatically.
-
-</details>
-
-<details>
-<summary><strong>Codex, and other agents</strong></summary>
+### Codex
 
 ```bash
-npx skills@latest add mattpocock/skills
+codex plugin marketplace add rgoldman73-dev/mattpocock-skills
+codex plugin add mattpocock-skills@rgoldman-mattpocock
 ```
 
-Pick the skills you want, and which coding agents to install them on. **The installer lets you choose which skills to take, so make sure `setup-matt-pocock-skills` is one of them.**
-
-A native Codex plugin is on the roadmap (see [`.agents/adr/0002-ship-as-a-claude-code-plugin.md`](./.agents/adr/0002-ship-as-a-claude-code-plugin.md)).
-
-</details>
-
-<details>
-<summary><strong>For tinkerers</strong></summary>
-
-Use the same installer, on any agent, including Claude Code:
-
-```bash
-npx skills@latest add mattpocock/skills
-```
-
-It writes the skills into your repo as ordinary files you own and can edit. Nothing updates behind your back; pull my latest changes when you want them with `npx skills update`.
-
-</details>
+Start a new session after installation. Choose the plugin-qualified skill when another package has the same name. Install one copy per host to avoid duplicates from the upstream marketplace or a separate skills installer.
 
 ### 2. Run `/setup-matt-pocock-skills`
 
